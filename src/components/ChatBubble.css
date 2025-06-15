@@ -1,0 +1,67 @@
+.chat-row {
+  display: flex;
+  align-items: flex-start;
+  margin: 16px auto;
+  max-width: 800px;
+  animation: fadeIn 0.3s ease;
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  margin-right: 10px;
+  object-fit: cover;
+  animation: float 3s ease-in-out infinite;
+}
+
+.bubble {
+  position: relative;
+  padding: 12px 16px;
+  border-radius: 16px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.4s ease forwards;
+  opacity: 0;
+  max-width: 75%;
+  background: #f4f4f4;
+}
+
+/* Tail triangle */
+.bubble::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 25px;
+  border-width: 0 10px 10px;
+  border-style: solid;
+  border-color: transparent transparent #f4f4f4;
+}
+
+/* Character-specific bubble colors */
+.bubble.chandler-bing    { background-color: #e0f7fa; }
+.bubble.joey-tribbiani   { background-color: #fff3e0; }
+.bubble.monica-geller    { background-color: #e8f5e9; }
+.bubble.phoebe-buffay    { background-color: #f3e5f5; }
+.bubble.rachel-green     { background-color: #fce4ec; }
+.bubble.ross-geller      { background-color: #ede7f6; }
+
+/* Typing animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+/* Optional staggered delay */
+.delay-0 { animation-delay: 0s; }
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+.delay-5 { animation-delay: 0.5s; }
