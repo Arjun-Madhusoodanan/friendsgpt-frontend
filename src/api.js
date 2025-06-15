@@ -1,6 +1,8 @@
 // src/api.js
 
-const API_URL = "http://localhost:5000/chat"; // Make sure Flask is running on port 5000
+// const API_URL = "http://localhost:5000/chat"; // Make sure Flask is running on port 5000
+const BASE_URL = process.env.REACT_APP_BACKEND_URL;
+const API_URL = `${BASE_URL}/chat`;
 
 export async function sendTopic(topic) {
   try {
